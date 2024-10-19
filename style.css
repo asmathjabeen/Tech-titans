@@ -1,0 +1,62 @@
+const ctxEnergy = document.getElementById('energyChart').getContext('2d');
+const ctxAirQuality = document.getElementById('airQualityChart').getContext('2d');
+const ctxTraffic = document.getElementById('trafficChart').getContext('2d');
+
+// Sample data
+const energyData = [20, 40, 60, 80, 100];
+const airQualityData = [100, 80, 60, 40, 20];
+const trafficData = [5, 10, 15, 20, 25];
+
+// Create energy efficiency chart
+const energyChart = new Chart(ctxEnergy, {
+    type: 'line',
+    data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{
+            label: 'Energy Consumption (kWh)',
+            data: energyData,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            fill: false,
+        }]
+    }
+});
+
+// Create air quality chart
+const airQualityChart = new Chart(ctxAirQuality, {
+    type: 'bar',
+    data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{
+            label: 'Air Quality Index',
+            data: airQualityData,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    }
+});
+
+// Create traffic flow chart
+const trafficChart = new Chart(ctxTraffic, {
+    type: 'pie',
+    data: {
+        labels: ['Morning', 'Afternoon', 'Evening', 'Night'],
+        datasets: [{
+            label: 'Traffic Flow',
+            data: trafficData,
+            backgroundColor: [
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 205, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+        }]
+    }
+});
